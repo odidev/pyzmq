@@ -130,12 +130,8 @@ after_test:
   # If tests are successful, create binary packages for the project.
   - ps: ls dist
   # Upload whl files if building a tag.
-  - >
-    IF "%APPVEYOR_REPO_TAG%" == "true"
-    (
-    python -m pip install twine &&
-    python -m twine upload --verbose --skip-existing dist/*.whl
-    )
+  - python -m pip install twine
+  - python -m twine upload --verbose --skip-existing dist/*.whl
 
 artifacts:
   # Archive the generated packages in the ci.appveyor.com build report.
