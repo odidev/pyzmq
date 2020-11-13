@@ -125,9 +125,9 @@ test_script:
   # with the appveyor build. To avoid the problems we single out that
   # specific test run it using the ``start`` command and then check
   # the junit report to pass or fail the build.
-  - pytest -vsx -m "not new_console" --pyargs zmq.tests
-  - start /W pytest -vsx -m "new_console" --pyargs zmq.tests --junit-xml=../results.xml
-  - python ../tools/check_junit_result.py ../results.xml
+  # - pytest -vsx -m "not new_console" --pyargs zmq.tests
+  # - start /W pytest -vsx -m "new_console" --pyargs zmq.tests --junit-xml=../results.xml
+  # - python ../tools/check_junit_result.py ../results.xml
   - cd ..
 
 after_test:
